@@ -1,7 +1,9 @@
 <template>
   <container id="container">
     <div id="gameDiv" :key="data.id" v-for="data in datas">
-      <h2>{{ data.name }}</h2>
+      <div>
+        <h3>{{ data.name }}</h3>
+      </div>
       <img id="bgImg" :src="data.background_image" alt="" />
     </div>
   </container>
@@ -50,12 +52,13 @@ export default {
 #container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 #bgImg {
-  height: 400px;
-  width: 300px;
+  height: 300px;
+  width: 200px;
   object-fit: cover;
 }
 </style>

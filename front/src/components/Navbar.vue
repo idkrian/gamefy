@@ -1,6 +1,14 @@
 <template>
   <div id="navContainer">
     <h1>Gamefy</h1>
+    <div>
+      <input type="text" name="" id="" />
+      <button>D</button>
+    </div>
+    <div>
+      <h3>entrar</h3>
+      <h3>registrar</h3>
+    </div>
   </div>
 </template>
 
