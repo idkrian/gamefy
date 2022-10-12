@@ -1,14 +1,23 @@
 <template>
   <div id="navContainer">
     <h1>Gamefy</h1>
-    <div>
-      <input type="text" name="" id="" />
-      <button>D</button>
+    <div id="inputDiv">
+      <input type="text" id="textInput" />
+      <button id="searchButton">
+        <i
+          id="icon"
+          style="color: black"
+          class="fa-solid fa-magnifying-glass fa-lg"
+        ></i>
+      </button>
     </div>
-    <div>
-      <h3>entrar</h3>
-      <h3>registrar</h3>
+    <div id="signDiv">
+      <h4 style="background-color: #05df06; color: black" id="signTitle">
+        entrar
+      </h4>
+      <h4 id="signTitle">registrar</h4>
     </div>
+    <i style="color: #05df06" class="fa-solid fa-cart-shopping"></i>
   </div>
 </template>
 
@@ -19,11 +28,37 @@ export default {
 </script>
 
 <style>
+#textInput {
+  background-color: white;
+  border: none;
+  height: 20px;
+  width: 300px;
+  color: black;
+  padding: 5px;
+  outline: none;
+}
+#signTitle {
+  display: flex;
+  justify-content: center;
+  margin: 0.5em;
+  width: 4em;
+  padding: 0.1em;
+}
+#searchButton {
+  height: 30px;
+  width: 30px;
+  background-color: #05df06;
+  border: none;
+  cursor: pointer;
+}
+#signDiv {
+  display: flex;
+}
 #navContainer {
   display: flex;
-  height: 3em;
+  height: 4em;
   align-items: center;
-  justify-content: center;
-  background-color: red;
+  justify-content: space-evenly;
+  background-color: black;
 }
 </style>
