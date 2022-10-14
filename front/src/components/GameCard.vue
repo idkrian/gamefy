@@ -1,5 +1,6 @@
 <template>
-  <container id="container">
+  <Poster />
+  <container id="containerDiv">
     <div id="gameDiv" :key="data.id" v-for="data in datas">
       <div>
         <h3>{{ data.name }}</h3>
@@ -11,11 +12,12 @@
 
 <script>
 import axios from "axios";
-
+import Poster from "./Poster.vue";
 export default {
   name: "GameCard",
   components: {
     axios,
+    Poster,
   },
   data() {
     return {
@@ -49,7 +51,7 @@ export default {
   margin: 1.5em;
 }
 
-#container {
+#containerDiv {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;

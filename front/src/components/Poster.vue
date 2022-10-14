@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="posterDiv">
     <img :src="poster" id="poster" />
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
     async getPoster() {
       const key = import.meta.env.VITE_API_KEY;
       await axios
-        .get(`https://api.rawg.io/api/games/4286?key=${key}`)
+        .get(`https://api.rawg.io/api/games/58175?key=${key}`)
         .then(
           (res) =>
             (this.poster = JSON.parse(
@@ -34,8 +34,8 @@ export default {
 </script>
 <style>
 #poster {
+  height: 600px;
   width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 </style>
