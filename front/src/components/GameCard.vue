@@ -1,13 +1,16 @@
 <template>
   <Poster />
-  <container id="containerDiv">
-    <div id="gameDiv" :key="data.id" v-for="data in datas">
+  <section id="containerDiv">
+    <router-link id="gameDiv" :key="data.id" v-for="data in datas" :to="{
+      name: 'game',
+      params: { id: data.id },
+    }">
       <div>
         <h3>{{ data.name }}</h3>
       </div>
       <img id="bgImg" :src="data.background_image" alt="" />
-    </div>
-  </container>
+    </router-link>
+  </section>
 </template>
 
 <script>
@@ -32,9 +35,7 @@ export default {
       const key = import.meta.env.VITE_API_KEY;
       await axios
         .get(`https://api.rawg.io/api/games?key=${key}`)
-        .then(
-          (res) => (this.datas = JSON.parse(JSON.stringify(res.data.results)))
-        );
+        .then((res) => (this.datas = JSON.parse(JSON.stringify(res.data.results))))
     },
   },
   mounted() {
@@ -45,10 +46,13 @@ export default {
 
 <style>
 #gameDiv {
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 1.5em;
+  text-decoration: none;
+
 }
 
 #containerDiv {
