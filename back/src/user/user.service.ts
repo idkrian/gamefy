@@ -26,7 +26,6 @@ export class UserService {
     return this.prisma.user.findFirst({where:{
       email
     }})
-    return `This action returns a #${email} user`;
   }
 
   listAll(){
